@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "demoapp-canary.fullname" . }}
+  name: {{ include "demoapp-base.fullname" . }}
   labels:
-{{ include "demoapp-canary.labels" . | indent 4 }}
+{{ include "demoapp-base.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "demoapp-canary.name" . }}
+      app.kubernetes.io/name: {{ include "demoapp-base.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "demoapp-canary.name" . }}
+        app.kubernetes.io/name: {{ include "demoapp-base.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
     {{- with .Values.imagePullSecrets }}
