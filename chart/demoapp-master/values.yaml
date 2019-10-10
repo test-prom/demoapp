@@ -1,0 +1,13 @@
+service:
+  name: product-page-svc
+  port: 80
+
+
+productionDeployment:
+  replicaCount: 2
+  weight: 100
+  image:
+    repository: diquzart/php-webapp
+    tag: latest
+    pullPolicy: IfNotPresent
+
