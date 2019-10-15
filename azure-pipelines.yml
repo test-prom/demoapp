@@ -12,7 +12,7 @@ pool:
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker Hub'
-    repository: 'diquzart/demoapp'
+    repository: 'diquzart/pyapp'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: '$(Build.SourceBranchName)-$(Build.SourceVersion)'
+    tags: 'v0.1.0'
