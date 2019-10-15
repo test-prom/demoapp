@@ -31,7 +31,8 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-          docker run --name demoapp diquzart/demoapp:$(tag)  curl localhost
+          docker images
+          docker run it --name demoapp diquzart/demoapp:$(tag)  /bin/bash -c "curl localhost"
           
           docker kill demoapp
         failOnStderr: true
