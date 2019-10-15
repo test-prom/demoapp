@@ -27,7 +27,8 @@ stages:
         dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-- task: CmdLine@2
-  inputs:
-    script: 'docker images'
-    failOnStderr: true
+    - task: CmdLine@2
+      inputs:
+        script: 'docker images'
+        failOnStderr: true
+
