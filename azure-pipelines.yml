@@ -15,4 +15,4 @@ pool:
     repository: 'diquzart/pyapp'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 'v0.1.0'
+    tags: '0.1.0'
