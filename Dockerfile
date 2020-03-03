@@ -1,3 +1,7 @@
-FROM php:7.1-apache
-COPY app/ /var/www/html
-EXPOSE 80
+FROM registry.access.redhat.com/ubi8/python-36 
+
+COPY app.py /
+RUN pip3 install flask
+
+EXPOSE 8080
+CMD ["python3", "/app.py"]
